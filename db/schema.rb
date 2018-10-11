@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_010512) do
-
+ActiveRecord::Schema.define(version: 2018_10_11_011757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 2018_10_11_010512) do
 
   create_table "forms", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "contact_id"
     t.string "region"
     t.boolean "joint_replacement"
     t.boolean "sports_medicine"
@@ -55,7 +53,6 @@ ActiveRecord::Schema.define(version: 2018_10_11_010512) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["contact_id"], name: "index_forms_on_contact_id"
     t.index ["user_id"], name: "index_forms_on_user_id"
   end
 
@@ -66,4 +63,21 @@ ActiveRecord::Schema.define(version: 2018_10_11_010512) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "forms"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "contacts", "forms"
+  add_foreign_key "form_products", "forms"
+  add_foreign_key "form_products", "products"
+  add_foreign_key "forms", "users"
 end
