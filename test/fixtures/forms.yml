@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  contact: one
+  region: MyString
+  joint_replacement: false
+  sports_medicine: false
+  orthopedic_trauma: false
+  spine: false
+  other_conditions: MyString
+  product: one
+  substitutions: false
+  signature: MyString
+  date: 2018-10-10 20:54:28
+
+two:
+  user: two
+  contact: two
+  region: MyString
+  joint_replacement: false
+  sports_medicine: false
+  orthopedic_trauma: false
+  spine: false
+  other_conditions: MyString
+  product: two
+  substitutions: false
+  signature: MyString
+  date: 2018-10-10 20:54:28
