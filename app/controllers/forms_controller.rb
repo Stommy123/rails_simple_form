@@ -1,11 +1,19 @@
 class FormsController < ApplicationController
   before_action :set_form, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @forms = Form.all
+  end
+
   def new
+    @form = Form.new
   end
 
   def create
-  end 
+    @form = current_user.forms.new(form_params)
+    @form.save
+    redirect_to forms_path
+  end
 
   def show
   end
@@ -14,9 +22,12 @@ class FormsController < ApplicationController
   end
 
   def update
+    @form.update(form_params)
   end
 
   def destroy
+    @form.destroy
+    redirect_to forms_path
   end
 
   private
@@ -26,7 +37,7 @@ class FormsController < ApplicationController
   end
 
   def form_params
-    params.require(:forms).permit(:user_id, :region, :joint_replacement, :sports_medicine, :orthopedic_trauma, :spine, :other_conditions, :substitutions, :signature, :date)
+    params.require(:form).permit(:email, :region, :joint_replacement, :sports_medicine, :orthopedic_trauma, :spine, :other_conditions, :substitutions, :signature, :date)
   end
 
 end

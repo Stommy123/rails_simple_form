@@ -1,2 +1,24 @@
-<h1>Forms#index</h1>
-<p>Find me in app/views/forms/index.html.erb</p>
+<h1>Forms</h1>
+<table>
+  <thead>
+    <tr>
+      <th>User Id</th>
+      <th>Form Id</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms.each do |form| %>
+      <tr>
+        <td><%= form.user_id %></td>
+        <td><%= form.id %></td>
+        <td><%= link_to 'Show', form %></td>
+        <td><%= link_to 'Edit', edit_form_path(form) %></td>
+        <td><%= link_to 'Destroy', form, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Form', new_form_path %>
