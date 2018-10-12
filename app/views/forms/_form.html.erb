@@ -1,0 +1,56 @@
+<%= form_with(model: form, local: true) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region %>
+    <%= f.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= f.label :joint_replacement %>
+    <%= f.check_box :joint_replacement%>
+  </div>
+
+  <div class="field">
+    <%= f.label :sports_medicine %>
+    <%= f.check_box :sports_medicine %>
+  </div>
+
+  <div class="field">
+    <%= f.label :orthopedic_trauma %>
+    <%= f.check_box :orthopedic_trauma %>
+  </div>
+
+  <div class="field">
+    <%= f.label :spine %>
+    <%= f.check_box :spine %>
+  </div>
+
+  <div class="field">
+    <%= f.label :other_conditions %>
+    <%= f.text_field :other_conditions %>
+  </div>
+
+  <div class="field">
+    <%= f.label :substitutions %>
+    <%= f.check_box :substitutions %>
+  </div>
+
+  <div class="field">
+    <%= f.label :signature %>
+    <%= f.text_field :signature %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
