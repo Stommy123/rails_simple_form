@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_213648) do
+ActiveRecord::Schema.define(version: 2018_10_13_005146) do
 
-  create_table "contacts", force: :cascade do |t|
+  create_table "dme_contacts", force: :cascade do |t|
     t.string "name"
     t.string "primary"
     t.string "phone"
@@ -20,11 +20,10 @@ ActiveRecord::Schema.define(version: 2018_10_12_213648) do
     t.string "city"
     t.string "state"
     t.string "zip"
-    t.string "type"
+    t.integer "form_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "form_id"
-    t.index ["form_id"], name: "index_contacts_on_form_id"
+    t.index ["form_id"], name: "index_dme_contacts_on_form_id"
   end
 
   create_table "form_products", force: :cascade do |t|
@@ -59,6 +58,34 @@ ActiveRecord::Schema.define(version: 2018_10_12_213648) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pt_contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "primary"
+    t.string "phone"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.integer "form_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["form_id"], name: "index_pt_contacts_on_form_id"
+  end
+
+  create_table "surgeon_contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "primary"
+    t.string "phone"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.integer "form_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["form_id"], name: "index_surgeon_contacts_on_form_id"
   end
 
   create_table "users", force: :cascade do |t|

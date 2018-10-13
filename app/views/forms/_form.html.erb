@@ -1,5 +1,26 @@
 <%= form_with(model: form, local: true) do |f| %>
 
+  <h1> SURGEON CONTACT </h1>
+  <%= f.fields_for :surgeon_contacts do |surgeon_form| %>
+    <div class="field">
+      <%= surgeon_form.label :name %>
+      <%= surgeon_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= surgeon_form.label :phone %>
+      <%= surgeon_form.text_field :phone %>
+    </div>
+    <div class="field">
+      <%= surgeon_form.label :street %>
+      <%= surgeon_form.text_field :street %>
+    </div>
+    <div class="field">
+      <%= surgeon_form.label :primary %>
+      <%= surgeon_form.text_field :primary %>
+    </div> <hr />
+  <% end %>
+
+  <h1> FORM INFO </h1>
   <div class="field">
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -49,6 +70,48 @@
     <%= f.label :date %>
     <%= f.date_field :date %>
   </div>
+
+
+  <h1> DME CONTACTS </h1>
+  <%= f.fields_for :dme_contacts do |dme_form| %>
+    <div class="field">
+      <%= dme_form.label :name %>
+      <%= dme_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= dme_form.label :phone %>
+      <%= dme_form.text_field :phone %>
+    </div>
+    <div class="field">
+      <%= dme_form.label :street %>
+      <%= dme_form.text_field :street %>
+    </div>
+    <div class="field">
+      <%= dme_form.label :primary %>
+      <%= dme_form.text_field :primary %>
+    </div> <hr/>
+  <% end %>
+
+
+  <h1> PT CONTACTS </h1>
+  <%= f.fields_for :pt_contacts do |pt_form| %>
+    <div class="field">
+      <%= pt_form.label :name %>
+      <%= pt_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= pt_form.label :phone %>
+      <%= pt_form.text_field :phone %>
+    </div>
+    <div class="field">
+      <%= pt_form.label :street %>
+      <%= pt_form.text_field :street %>
+    </div>
+    <div class="field">
+      <%= pt_form.label :primary %>
+      <%= pt_form.text_field :primary %>
+    </div> <hr/>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

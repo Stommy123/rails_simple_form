@@ -7,6 +7,9 @@ class FormsController < ApplicationController
 
   def new
     @form = Form.new
+    1.times { @form.surgeon_contacts.build }
+    5.times { @form.dme_contacts.build }
+    5.times { @form.pt_contacts.build }
   end
 
   def create
@@ -26,6 +29,9 @@ class FormsController < ApplicationController
   end
 
   def destroy
+    @form.surgeon_contacts.destroy_all
+    @form.dme_contacts.destroy_all
+    @form.pt_contacts.destroy_all
     @form.destroy
     redirect_to forms_path
   end
@@ -37,7 +43,45 @@ class FormsController < ApplicationController
   end
 
   def form_params
-    params.require(:form).permit(:email, :region, :joint_replacement, :sports_medicine, :orthopedic_trauma, :spine, :other_conditions, :substitutions, :signature, :date)
+    params.require(:form).permit(
+      :email,
+      :region,
+      :joint_replacement,
+      :sports_medicine,
+      :orthopedic_trauma,
+      :spine,
+      :other_conditions,
+      :substitutions,
+      :signature,
+      :date,
+      surgeon_contacts_attributes: [
+        :name,
+        :primary,
+        :phone,
+        :street,
+        :city,
+        :state,
+        :zip,
+      ],
+      dme_contacts_attributes: [
+        :name,
+        :primary,
+        :phone,
+        :street,
+        :city,
+        :state,
+        :zip,
+      ],
+      pt_contacts_attributes: [
+        :name,
+        :primary,
+        :phone,
+        :street,
+        :city,
+        :state,
+        :zip,
+      ]
+    )
   end
 
 end
