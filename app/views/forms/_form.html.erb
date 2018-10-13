@@ -56,6 +56,18 @@
     <%= f.text_field :other_conditions %>
   </div>
 
+  <h1> PRODUCTS </h1>
+    <div>
+      <%= f.fields_for :form_products do |product_form| %>
+        <div class="field">
+          <%= product_form.label :amount %>
+          <%= product_form.text_field :amount %>
+          <%= product_form.hidden_field :product_id %>
+        </div><hr />
+      <% end %>
+    </div>
+
+  <h1> SIGN AND DATE </h1>
   <div class="field">
     <%= f.label :substitutions %>
     <%= f.check_box :substitutions %>
