@@ -4,12 +4,16 @@
     <title>Rom3 Prescription Form</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+ 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="container logo margin-bottom">
+      <%= image_tag "rom3.png" %>
+    </div>
+  
     <%= yield %>
   </body>
 </html>

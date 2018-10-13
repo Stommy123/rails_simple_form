@@ -22,7 +22,7 @@
  }
 
  #login.container {
-    background-color: turquoise;
+    background-color: #3d9fc0;
     border-radius: 25px;
     max-width: 25%;
     padding: 20px;
@@ -30,4 +30,14 @@
 
  .margin-bottom {
     margin-bottom:15px;}
-    
+
+.logo {
+    width: 25%;
+    height: 25%;
+}
+
+/* resize images */
+.logo img {
+    width: 100%;
+    height: auto;
+}
