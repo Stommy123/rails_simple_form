@@ -1,5 +1,25 @@
 <%= form_with(model: form, local: true) do |f| %>
 
+<h1>Surgeon</h1>
+<%= f.fields_for @surgeon do |contact_form| %>
+  <div class="field">
+    <%= contact_form.label :name %>
+    <%= contact_form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= contact_form.label :street %>
+    <%= contact_form.text_field :street %>
+  </div>
+  <div class="field">
+    <%= contact_form.label :phone %>
+    <%= contact_form.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= contact_form.label :primary %>
+    <%= contact_form.text_field :primary %>
+  </div> <hr/>
+<% end %>
+
   <div class="field">
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -49,6 +69,46 @@
     <%= f.label :date %>
     <%= f.date_field :date %>
   </div>
+
+  <h1>DME</h1>
+  <%= f.fields_for @dme do |contact_form| %>
+    <div class="field">
+      <%= contact_form.label :name %>
+      <%= contact_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= contact_form.label :street %>
+      <%= contact_form.text_field :street %>
+    </div>
+    <div class="field">
+      <%= contact_form.label :phone %>
+      <%= contact_form.text_field :phone %>
+    </div>
+    <div class="field">
+      <%= contact_form.label :primary %>
+      <%= contact_form.text_field :primary %>
+    </div> <hr/>
+  <% end %>
+  <br />
+  <h1>PT</h1>
+  <%= f.fields_for @pt do |contact_form| %>
+    <div class="field">
+      <%= contact_form.label :name %>
+      <%= contact_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= contact_form.label :street %>
+      <%= contact_form.text_field :street %>
+    </div>
+    <div class="field">
+      <%= contact_form.label :phone %>
+      <%= contact_form.text_field :phone %>
+    </div>
+    <div class="field">
+      <%= contact_form.label :primary %>
+      <%= contact_form.text_field :primary %>
+    </div> <hr/>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

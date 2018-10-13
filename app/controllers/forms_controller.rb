@@ -7,6 +7,9 @@ class FormsController < ApplicationController
 
   def new
     @form = Form.new
+    @surgeon = 1.times { @form.contacts.build }
+    @dme = 5.times { @form.contacts.build }
+    @pt = 5.times { @form.contacts.build }
   end
 
   def create
@@ -37,7 +40,28 @@ class FormsController < ApplicationController
   end
 
   def form_params
-    params.require(:form).permit(:email, :region, :joint_replacement, :sports_medicine, :orthopedic_trauma, :spine, :other_conditions, :substitutions, :signature, :date)
+    params.require(:form).permit(
+      :email,
+      :region,
+      :joint_replacement,
+      :sports_medicine,
+      :orthopedic_trauma,
+      :spine,
+      :other_conditions,
+      :substitutions,
+      :signature,
+      :date,
+      contacts_attributes: [
+        :name,
+        :primary,
+        :phone,
+        :street,
+        :city,
+        :state,
+        :zip,
+        :type
+      ]
+    )
   end
 
 end
