@@ -6,7 +6,9 @@ class FormsController < ApplicationController
   end
 
   def new
+    @products = Product.all
     @form = Form.new
+    @products.each_with_index{ |product, i| @form.form_products.build(form: @form, product: product)}
     1.times { @form.surgeon_contacts.build }
     5.times { @form.dme_contacts.build }
     5.times { @form.pt_contacts.build }
@@ -14,7 +16,13 @@ class FormsController < ApplicationController
 
   def create
     @form = current_user.forms.new(form_params)
-    @form.save
+    form_params[:form_products_attributes].each do |attribute|
+      attribute_product_id = attribute[1][:product_id]
+      attribute_product = Product.find(attribute_product_id)
+      @form.form_products.new(product: attribute_product)
+    end
+
+    @form.save!
     redirect_to forms_path
   end
 
@@ -22,10 +30,12 @@ class FormsController < ApplicationController
   end
 
   def edit
+    @products = Product.all
   end
 
   def update
     @form.update(form_params)
+    redirect_to forms_path
   end
 
   def destroy
@@ -80,6 +90,10 @@ class FormsController < ApplicationController
         :city,
         :state,
         :zip,
+      ],
+      form_products_attributes: [
+        :amount,
+        :product_id,
       ]
     )
   end
