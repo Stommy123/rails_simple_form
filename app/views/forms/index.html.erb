@@ -1,5 +1,5 @@
 <h1>Forms</h1>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>User Id</th>
@@ -12,10 +12,12 @@
     <% @forms.each do |form| %>
       <tr>
         <td><%= form.user_id %></td>
-        <td><%= form.id %></td>
+        <td><%= form&.surgeon_contacts&.first.name %></td>
+        <td><%= image_tag form&.signature, class: "logo" %></td>
+
         <td><%= link_to 'Show', form %></td>
         <td><%= link_to 'Edit', edit_form_path(form) %></td>
-        <td><%= link_to 'Destroy', form, method: :delete %></td>
+        <td><%#= link_to 'Destroy', form, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
