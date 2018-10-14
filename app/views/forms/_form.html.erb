@@ -111,7 +111,19 @@
       <%= pt_form.label :primary %>
       <%= pt_form.text_field :primary %>
     </div> <hr/>
-  <% end %>
+    <% end %>
+
+    <%= f.hidden_field :signature %>
+
+
+  <%#= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+  <div class="signature_pad text-center">
+    <div class="signature_pad_body">
+      <canvas></canvas>
+    </div>
+  </div>
+
+  
 
   <div class="actions">
     <%= f.submit %>
