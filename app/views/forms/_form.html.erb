@@ -129,7 +129,7 @@
     <%= f.hidden_field :signature %>
 
 
-  <%#= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+  <%= f.hidden_field :signature, class: 'signature_pad_input' %>
   <div class="signature_pad text-center">
     <div class="signature_pad_body">
       <canvas></canvas>
@@ -138,7 +138,7 @@
 
   
 
-  <div class="actions">
+  <div class="actions signature_pad_save">
     <%= f.submit %>
   </div>
 <% end %>
