@@ -1,12 +1,14 @@
 <div class="container">
-  <p><strong>Important Information<strong></p>
-  <ul>
-    <li>This form must be filled out completely by a healthcare professional.</li>
-    <li>Intent to prescribe is only available until <strong>12/31/18</strong></li>
-    <li>All data collected is confidential and is for manufacturing projections</li>
-    <li>THis is not a contractual agreement, just an estimate of units to be prescribed</li>
-    <li>Healthcare providers completing "intent to Prescribe" will have priority status upon product launch.</li>
-  </ul>
+  <div id="info">
+    <p><strong>Important Information</strong></p>
+    <ul>
+      <li>This form must be filled out completely by a healthcare professional.</li>
+      <li>Intent to prescribe is only available until <strong>12/31/18</strong></li>
+      <li>All data collected is confidential and is for manufacturing projections</li>
+      <li>THis is not a contractual agreement, just an estimate of units to be prescribed</li>
+      <li>Healthcare providers completing "intent to Prescribe" will have priority status upon product launch.</li>
+    </ul>
+  </div>
   <%= render 'form', form: @form %>
   <%= link_to 'Back', forms_path %>
 </div>
