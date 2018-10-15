@@ -24,8 +24,8 @@ class FormsController < ApplicationController
 
     @form.save!
     # Tell the UserMailer to send a welcome email after save
-    FormMailer.with(user: current_user).welcome_email.deliver
- 
+    FormMailer.with(reciepient: form_params[:email]).welcome_email.deliver
+
     redirect_to forms_path
   end
 
