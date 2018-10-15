@@ -69,3 +69,5 @@ gem 'bootstrap', '~> 4.1.3'
 gem  'jquery-rails'
 gem 'jquery-ui-rails'
 gem "font-awesome-rails"
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

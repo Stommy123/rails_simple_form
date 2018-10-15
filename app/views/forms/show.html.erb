@@ -1,0 +1,177 @@
+  <div id="page-1">
+      <div class="section">
+          <div class="blue">
+          <p>SURGEON INFORMATION</p>
+          </div>
+            <div class="field">
+            Surgeon Name: <%= @form.surgeon_contacts.first.name %>
+            </div>
+            <hr/>
+            <div class="field">
+            Surgeon Address: <%= @form.surgeon_contacts.first.street %>
+            </div>
+            <hr/>
+            <div class="field">
+            Surgeon Name: <%= @form.surgeon_contacts.first.phone %>
+            </div>
+            <hr/>
+            <div class="field"> 
+            Surgeon Contact Person: 
+            </div>
+            <hr/>
+          <div class="blue">
+            <p>REGION</p>
+          </div>
+            <div class="field">
+                Placeholder
+            </div>
+        </div>
+  </div>
+
+
+  <div id="page-2">
+    <div class="page-header">
+      <h5>SHIPPING INFORMATION</h5>
+      <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+    </div>
+      <div class="section">
+        <div id="page-2-1">
+            <div class="blue">
+              <p>HOSPITAL/DME INFORMATION --- TO BE ADDED</p>
+            </div>
+            <div class="blue">
+              <p>PHYSICAL THERAPY INFORMATION --- TO BE ADDED</p>
+            </div>
+
+            <% if @form.joint_replacement %>
+                <div class="field">
+                    Joint Replacement
+                </div>
+            <% end %>
+            <hr/>
+            <% if @form.sports_medicine %>
+                <div class="field">
+                    Sports Medicine
+                </div>
+            <% end %>
+            <hr/>
+            <% if @form.orthopedic_trauma %>
+                <div class="field">
+                    Orthopedic Trauma
+                </div>
+            <% end %>
+            <hr/>
+            <% if @form.spine %>
+                <div class="field">
+                    Spine
+                </div>
+            <% end %>
+            <hr/>
+            <% if @form.other_conditions %>
+                <div class="field">
+                    <%= @form.other_conditions %>
+                </div>
+            <% end %>
+        </div>
+        <div id="page-2-2">
+          <div class="blue">
+            <p>NUMBER OF PATIENTS/UNITS PRESCRIBED (Monthly)</p>
+          </div>
+           
+            <% @form.form_products.each do |product|%>
+                <div class="form-product">
+                <%= product.product.description %>
+                <%= product.amount %>
+                </div>
+            <% end %>
+
+            <hr class="blue-line"/>
+            <div class="field">
+              <% if @form.substitutions %>
+                 Substitions Selected
+              <% else %>
+                Substitions Not Selected
+              <% end %>
+            </div>
+            <hr class="blue-line" />
+          <div class="field signature">
+                <%= image_tag @form&.signature %>
+            </div>
+            <hr/>
+          </div>
+          <br/>
+          <div class="field">
+            Email <%= @form.email %>
+            <hr/>
+          </div>
+          <div class="field">
+            Date Signed: <%= @form.date.to_formatted_s(:long) %>
+          </div>
+      </div>
+  </div>
+
+
+  <div id="page-3">
+      <div class="page-header">
+        <h5>SHIPPING INFORMATION</h5>
+        <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+      </div>
+      <div class="section">
+        <div class="blue">
+          <p>HOSPITAL/DME INFORMATION</p>
+        </div>
+          <% @form.dme_contacts.each do |contact| %>
+            <div class="field">
+                Name: <%= contact.name %>
+              <hr/>
+            </div>
+            <div class="field">
+              Address: <%= contact.street %>
+            </div>
+            <div>
+              <p class="grey">Daytime Contact Information</p>
+            </div>
+            <div class="field">
+                Contact: <%= contact.phone %>
+              <hr/>
+            </div>
+            <div class="field">
+                Contact Person: <%= contact.name %>
+            </div>
+            <hr class="blue-line"/>
+          <% end %>
+      </div>
+  </div>
+
+
+  <div id="page-4">
+      <div class="page-header">
+        <h5>SHIPPING INFORMATION</h5>
+        <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+      </div>
+      <div class="blue">
+        <p>PHYSICAL THERAPY INFORMATION</p>
+      </div>
+      <div class="section">
+          <% @form.pt_contacts.each do |contact|%>
+            <div class="field">
+                Name: <%= contact.name %>
+              <hr/>
+            </div>
+            <div class="field">
+              Address: <%= contact.street %>
+            </div>
+            <div>
+              <p class="grey">Daytime Contact Information</p>
+            </div>
+            <div class="field">
+                Contact: <%= contact.phone %>
+              <hr/>
+            </div>
+            <div class="field">
+                Contact Person: <%= contact.name %>
+            </div>
+            <hr class="blue-line"/>
+            <% end %>
+    </div>
+  </div>
