@@ -52,10 +52,61 @@
       <div class="section">
         <div id="page-2-1">
             <div class="blue">
-              <p>HOSPITAL/DME INFORMATION --- TO BE ADDED</p>
+              <p>HOSPITAL/DME INFORMATION</p>
+            </div>
+            <div class="dme">
+              <%= f.fields_for @dme do |dme_form| %>
+                <div class="field">
+                  <%= dme_form.label :name %>
+                  <%= dme_form.text_field :name %>
+                  <hr/>
+                </div>
+                <div class="field">
+                  <%= dme_form.label "Address" %>
+                  <%= dme_form.text_field :street %>
+                </div>
+                <div>
+                  <p class="grey">Daytime Contact Information</p>
+                </div>
+                <div class="field">
+                  <%= dme_form.label :phone %>
+                  <%= dme_form.text_field :phone %>
+                  <hr/>
+                </div>
+                <div class="field">
+                  <%= dme_form.label "Contact Person" %>
+                  <%= dme_form.text_field :primary %>
+                </div>
+              <% end %>
             </div>
             <div class="blue">
-              <p>PHYSICAL THERAPY INFORMATION --- TO BE ADDED</p>
+              <p>PHYSICAL THERAPY INFORMATION</p>
+            </div>
+            <div class="pt">
+                <%= f.fields_for @pt do |pt_form| %>
+                <div class="field">
+                  <%= pt_form.label :name %>
+                  <%= pt_form.text_field :name %>
+                  <hr/>
+                </div>
+                <div class="field">
+                  <%= pt_form.label "Address" %>
+                  <%= pt_form.text_field :street %>
+                </div>
+                <div>
+                  <p class="grey">Daytime Contact Information</p>
+                </div>
+                <div class="field">
+                  <%= pt_form.label :phone %>
+                  <%= pt_form.text_field :phone %>
+                  <hr/>
+                </div>
+                <div class="field">
+                  <%= pt_form.label "Contact Person" %>
+                  <%= pt_form.text_field :primary %>
+                </div>
+                <hr class="blue-line"/>
+                <% end %>
             </div>
             <div class="field">
               <%= f.label :joint_replacement %>

@@ -4,14 +4,19 @@
     <title>Rom3 Prescription Form</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
   </head>
 
   <body>
+    <div id="header" class="container">
+      <div id="logo">Logo</div>
+      <div>
+        <h3> Intent to Prescribe </h3>
+        <p> Page X </p>
+      </div>
+    </div>
     <%= yield %>
   </body>
-  
+
 </html>
