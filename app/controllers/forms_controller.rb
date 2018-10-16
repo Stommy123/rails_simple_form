@@ -8,7 +8,7 @@ class FormsController < ApplicationController
   def new
     @products = Product.all
     @form = Form.new
-    @products.each_with_index{ |product, i| @form.form_products.build(form: @form, product: product) }
+    @products.each_with_index{ |product, i| @form.form_products.build(form: @form, product: product)}
     1.times { @form.surgeon_contacts.build }
     5.times { @form.dme_contacts.build }
     5.times { @form.pt_contacts.build }
@@ -19,28 +19,16 @@ class FormsController < ApplicationController
   def create
     @form = current_user.forms.new(form_params)
     form_params[:form_products_attributes].each do |attribute|
-      attribute_product_id = attribute[1][:product_id]
-      attribute_product = Product.find(attribute_product_id)
-      @form.form_products.new(product: attribute_product)
+      @form.form_products.new(product: Product.find(attribute[1][:product_id]))
     end
-
     @form.save!
     # Tell the UserMailer to send a welcome email after save
-    FormMailer.with(reciepient: form_params[:email]).welcome_email.deliver
-
+    FormMailer.with(reciepient: @form.email, form: @form).welcome_email.deliver
     redirect_to forms_path
   end
 
   def show
     @form = Form.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "Your_filename",
-        template: "yours_controller/show.html.erb",
-        layout: 'pdf.html'
-      end
-    end
   end
 
   def edit
