@@ -1,4 +1,13 @@
 <div class="container">
+
+  <div id="header">
+    <div id="logo">
+      <%= image_tag "rom3.png", id: "rom" %>
+    </div>
+    <div>
+      <h3> Intent to Prescribe </h3>
+    </div>
+  </div>
   <div id="info">
     <p><strong>Important Information</strong></p>
     <ul>
@@ -10,5 +19,5 @@
     </ul>
   </div>
   <%= render 'form', form: @form %>
-  <%= link_to 'Back', forms_path %>
+
 </div>
