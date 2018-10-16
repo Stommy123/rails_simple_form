@@ -1,8 +1,8 @@
 class Form < ApplicationRecord
   belongs_to :user
 
-  has_many :form_products, inverse_of: :form
-  has_many :products, through: :form_products
+  has_many :form_products, inverse_of: :form, :dependent => :delete_all
+  has_many :products, through: :form_products, :dependent => :delete_all
   accepts_nested_attributes_for :form_products
 
   has_many :surgeon_contacts, inverse_of: :form, :dependent => :delete_all

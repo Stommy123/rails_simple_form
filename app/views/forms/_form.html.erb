@@ -1,39 +1,44 @@
 <%= form_with(model: form, local: true) do |f| %>
 
+
   <div id="page-1">
-      <p> This form must be filled out completely - TYPE or PRINT information below: </p>
+      <div class="instructions">
+        <p> This form must be filled out completely - TYPE or PRINT information below: </p>
+      </div>
       <div class="section">
           <div class="blue">
           <p>SURGEON INFORMATION</p>
           </div>
           <%= f.fields_for :surgeon_contacts do |surgeon_form| %>
             <div class="field">
-              <%= surgeon_form.label :name %>
-              <%= surgeon_form.text_field :name %>
+              <%= surgeon_form.label "Name:" %>
+              <%= surgeon_form.text_field :name, class: 'form-control' %>
             </div>
-            <hr/>
             <div class="field">
-              <%= surgeon_form.label "Address" %>
-              <%= surgeon_form.text_field :street %>
+              <%= surgeon_form.label "Address:" %>
+              <%= surgeon_form.text_field :street, class: 'form-control'  %>
             </div>
-            <hr/>
+            <div>
+              <p class="grey">Daytime Contact Information</p>
+            </div>
             <div class="field">
-              <%= surgeon_form.label :phone %>
-              <%= surgeon_form.text_field :phone %>
+              <%= surgeon_form.label "Phone:" %>
+              <%= surgeon_form.text_field :phone, class: 'form-control' %>
             </div>
-            <hr/>
             <div class="field">
-              <%= surgeon_form.label "Contact Person" %>
-              <%= surgeon_form.text_field :primary %>
+              <%= surgeon_form.label "Contact Person:" %>
+              <%= surgeon_form.text_field :primary, class: 'form-control' %>
             </div>
-            <hr/>
           <% end %>
           <div class="blue">
             <p>REGION</p>
           </div>
-            <div class="field">
-              <%= f.select :region, ["East","West"] %>
+            <div class="form-control-lg">
+              <%= f.select :region, ["East","West"], class: "form-control-lg" %>
             </div>
+        </div>
+        <div id="regions">
+          <%= image_tag 'https://i.imgur.com/EatbRWY.png', id: 'regions-image' %>
         </div>
   </div>
 
@@ -41,7 +46,9 @@
   <div id="page-2">
     <div class="page-header">
       <h5>SHIPPING INFORMATION</h5>
-      <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+      <div class="instructions">
+        <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+      </div>
     </div>
       <div class="section">
         <div id="page-2-1">
@@ -51,25 +58,24 @@
             <div class="dme">
               <%= f.fields_for @dme do |dme_form| %>
                 <div class="field">
-                  <%= dme_form.label :name %>
-                  <%= dme_form.text_field :name %>
-                  <hr/>
+                  <%= dme_form.label "Name:" %>
+                  <%= dme_form.text_field :name, class: 'form-control' %>
                 </div>
                 <div class="field">
-                  <%= dme_form.label "Address" %>
-                  <%= dme_form.text_field :street %>
+                  <%= dme_form.label "Address:" %>
+                  <%= dme_form.text_field :street, class: 'form-control' %>
                 </div>
                 <div>
                   <p class="grey">Daytime Contact Information</p>
                 </div>
                 <div class="field">
-                  <%= dme_form.label :phone %>
-                  <%= dme_form.text_field :phone %>
-                  <hr/>
+                  <%= dme_form.label "Phone:" %>
+                  <%= dme_form.text_field :phone, class: 'form-control' %>
+
                 </div>
                 <div class="field">
-                  <%= dme_form.label "Contact Person" %>
-                  <%= dme_form.text_field :primary %>
+                  <%= dme_form.label "Contact Person:" %>
+                  <%= dme_form.text_field :primary, class: 'form-control' %>
                 </div>
               <% end %>
             </div>
@@ -79,52 +85,52 @@
             <div class="pt">
                 <%= f.fields_for @pt do |pt_form| %>
                 <div class="field">
-                  <%= pt_form.label :name %>
-                  <%= pt_form.text_field :name %>
-                  <hr/>
+                  <%= pt_form.label "Name:" %>
+                  <%= pt_form.text_field :name, class: 'form-control' %>
+
                 </div>
                 <div class="field">
-                  <%= pt_form.label "Address" %>
-                  <%= pt_form.text_field :street %>
+                  <%= pt_form.label "Address:" %>
+                  <%= pt_form.text_field :street, class: 'form-control' %>
                 </div>
                 <div>
                   <p class="grey">Daytime Contact Information</p>
                 </div>
                 <div class="field">
-                  <%= pt_form.label :phone %>
-                  <%= pt_form.text_field :phone %>
-                  <hr/>
+                  <%= pt_form.label "Phone:" %>
+                  <%= pt_form.text_field :phone, class: 'form-control' %>
+
                 </div>
                 <div class="field">
-                  <%= pt_form.label "Contact Person" %>
-                  <%= pt_form.text_field :primary %>
+                  <%= pt_form.label "Contact Person:" %>
+                  <%= pt_form.text_field :primary, class: 'form-control' %>
                 </div>
                 <hr class="blue-line"/>
                 <% end %>
             </div>
-            <div class="field">
-              <%= f.label :joint_replacement %>
-              <%= f.check_box :joint_replacement%>
+            <div class="form-check">
+              <%= f.check_box :joint_replacement, class: "form-check-input" %>
+              <%= f.label :joint_replacement, class: "form-check-label" %>
             </div>
-            <hr/>
-            <div class="field">
-              <%= f.label :sports_medicine %>
-              <%= f.check_box :sports_medicine %>
+
+            <div class="form-check">
+              <%= f.check_box :sports_medicine, class: "form-check-input" %>
+              <%= f.label :sports_medicine, class: "form-check-label" %>
             </div>
-            <hr/>
-            <div class="field">
-              <%= f.label :orthopedic_trauma %>
-              <%= f.check_box :orthopedic_trauma %>
+
+            <div class="form-check">
+              <%= f.check_box :orthopedic_trauma, class: "form-check-input" %>
+              <%= f.label :orthopedic_trauma, class: "form-check-label" %>
             </div>
-            <hr/>
-            <div class="field">
-              <%= f.label :spine %>
-              <%= f.check_box :spine %>
+
+            <div class="form-check">
+              <%= f.check_box :spine, class: "form-check-input" %>
+              <%= f.label :spine, class: "form-check-label" %>
             </div>
-            <hr/>
+
             <div class="field">
-              <%= f.label :other_conditions %>
-              <%= f.text_field :other_conditions %>
+              <%= f.label "Other Conditions:" %>
+              <%= f.text_field :other_conditions, class: 'form-control' %>
             </div>
         </div>
         <div id="page-2-2">
@@ -135,42 +141,45 @@
               <%= f.fields_for :form_products do |product_form| %>
                 <div class="field">
                   <%= image_tag @products[product_form.index].image, class: "products" %>
-                  <%= product_form.label :amount %>
+                  <%= product_form.label "# of Units/Month:" %>
                   <%= product_form.text_field :amount %>
                   <%= product_form.hidden_field :product_id %>
-                </div><hr />
+                </div><hr/>
               <% end %>
             </div>
             <hr class="blue-line"/>
-            <div class="field">
-              <%= f.label "No Substitutions" %>
-              <%= f.check_box :substitutions %>
+            <div class="form-check">
+              <%= f.check_box :substitutions, class: "form-check-input" %>
+              <%= f.label "No Substitutions", class: "form-check-label" %>
             </div>
             <hr class="blue-line" />
           <div class="field signature">
-            <%= f.label "Prescriber Signature" %>
+            <%= f.label "Prescriber Signature:" %>
             <%= f.hidden_field :signature, class: 'signature_pad_input' %>
             <div class="signature_pad text-center">
               <div class="signature_pad_body">
                 <canvas></canvas>
               </div>
             </div>
-            <hr/>
+
           </div>
           <br/>
           <div class="field">
-            <%= f.label :email %>
-            <%= f.text_field :email %>
+            <%= f.label "Email:" %>
+            <%= f.text_field :email, class: 'form-control' %>
             <%= f.hidden_field :date, value: DateTime.now %>
           </div>
       </div>
+    </div>
   </div>
 
 
   <div id="page-3">
       <div class="page-header">
         <h5>SHIPPING INFORMATION</h5>
-        <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        <div class="instructions">
+          <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        </div>
       </div>
       <div class="section">
         <div class="blue">
@@ -178,27 +187,27 @@
         </div>
           <%= f.fields_for :dme_contacts do |dme_form| %>
             <div class="field">
-              <%= dme_form.label :name %>
-              <%= dme_form.text_field :name %>
-              <hr/>
+              <%= dme_form.label "Name:" %>
+              <%= dme_form.text_field :name, class: 'form-control' %>
+
             </div>
             <div class="field">
-              <%= dme_form.label "Address" %>
-              <%= dme_form.text_field :street %>
+              <%= dme_form.label "Address:" %>
+              <%= dme_form.text_field :street, class: 'form-control' %>
             </div>
             <div>
               <p class="grey">Daytime Contact Information</p>
             </div>
             <div class="field">
-              <%= dme_form.label :phone %>
-              <%= dme_form.text_field :phone %>
-              <hr/>
+              <%= dme_form.label "Phone:" %>
+              <%= dme_form.text_field :phone, class: 'form-control' %>
+
             </div>
             <div class="field">
-              <%= dme_form.label "Contact Person" %>
-              <%= dme_form.text_field :primary %>
+              <%= dme_form.label "Contact Person:" %>
+              <%= dme_form.text_field :primary, class: 'form-control' %>
             </div>
-            <hr class="blue-line"/>
+            <hr class="blue-line-final"/>
           <% end %>
       </div>
   </div>
@@ -207,7 +216,9 @@
   <div id="page-4">
       <div class="page-header">
         <h5>SHIPPING INFORMATION</h5>
-        <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        <div class="instructions">
+          <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        </div>
       </div>
       <div class="blue">
         <p>PHYSICAL THERAPY INFORMATION</p>
@@ -215,29 +226,38 @@
       <div class="section">
           <%= f.fields_for :pt_contacts do |pt_form| %>
             <div class="field">
-              <%= pt_form.label :name %>
-              <%= pt_form.text_field :name %>
+              <%= pt_form.label "Name:" %>
+              <%= pt_form.text_field :name, class: 'form-control' %>
             </div>
-            <hr/>
+
             <div class="field">
-              <%= pt_form.label "Address" %>
-              <%= pt_form.text_field :street %>
+              <%= pt_form.label "Address:" %>
+              <%= pt_form.text_field :street, class: 'form-control' %>
             </div>
               <p class="grey">Daytime Contact Information</p>
             <div class="field">
-              <%= pt_form.label :phone %>
-              <%= pt_form.text_field :phone %>
+              <%= pt_form.label "Phone:" %>
+              <%= pt_form.text_field :phone, class: 'form-control' %>
             </div>
-            <hr/>
+
             <div class="field">
-              <%= pt_form.label "Contact Person" %>
-              <%= pt_form.text_field :primary %>
+              <%= pt_form.label "Contact Person:" %>
+              <%= pt_form.text_field :primary, class: 'form-control' %>
             </div>
-            <hr class="blue-line" />
+            <hr class="blue-line-final" />
             <% end %>
     </div>
-    <div class="actions signature_pad_save">
-      <%= f.submit "Submit" %>
-    </div>
   </div>
+
+
+  <div class="actions signature_pad_save" id="submit">
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+
+
+  <div id="footer">
+    <p>COMPANY, LLC. | T: 1 (888) 888-8888 | F: (888) 888-8888 | E: email@email.com</p>
+  </div>
+
+
 <% end %>
