@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2018_10_13_005146) do
   end
 
   create_table "forms", force: :cascade do |t|
-    t.integer "user_id"
     t.string "region"
     t.boolean "joint_replacement"
     t.boolean "sports_medicine"
@@ -50,7 +49,6 @@ ActiveRecord::Schema.define(version: 2018_10_13_005146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
-    t.index ["user_id"], name: "index_forms_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|

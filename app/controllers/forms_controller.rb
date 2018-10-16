@@ -1,5 +1,5 @@
 class FormsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:new]
   before_action :set_form, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,7 +18,7 @@ class FormsController < ApplicationController
   end
 
   def create
-    @form = current_user.forms.new(form_params)
+    @form = Forms.new(form_params)
     form_params[:form_products_attributes].each do |attribute|
       @form.form_products.new(product: Product.find(attribute[1][:product_id]))
     end
