@@ -8,7 +8,7 @@ class FormsController < ApplicationController
   def new
     @products = Product.all
     @form = Form.new
-    @products.each_with_index{ |product, i| @form.form_products.build(form: @form, product: product)}
+    @products.each{ |product| @form.form_products.build(form: @form, product: product)}
     1.times { @form.surgeon_contacts.build }
     5.times { @form.dme_contacts.build }
     5.times { @form.pt_contacts.build }
