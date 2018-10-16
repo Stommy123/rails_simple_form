@@ -45,7 +45,7 @@
 
   <div id="page-2">
     <div class="page-header">
-      <h5>SHIPPING INFORMATION</h5>
+      <h5>Order INFORMATION</h5>
       <div class="instructions">
         <p>TYPE or PRINT where the prescriptions are to be delivered</p>
       </div>
@@ -220,10 +220,10 @@
           <p>TYPE or PRINT where the prescriptions are to be delivered</p>
         </div>
       </div>
-      <div class="blue">
-        <p>PHYSICAL THERAPY INFORMATION</p>
-      </div>
       <div class="section">
+        <div class="blue">
+          <p>PHYSICAL THERAPY INFORMATION</p>
+        </div>
           <%= f.fields_for :pt_contacts do |pt_form| %>
             <div class="field">
               <%= pt_form.label "Name:" %>

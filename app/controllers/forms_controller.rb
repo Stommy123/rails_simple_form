@@ -1,4 +1,5 @@
 class FormsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_form, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -24,7 +25,7 @@ class FormsController < ApplicationController
     @form.save!
     # Tell the UserMailer to send a welcome email after save
     FormMailer.with(reciepient: @form.email, form: @form).welcome_email.deliver
-    redirect_to forms_path
+    redirect_to @form
   end
 
   def show
