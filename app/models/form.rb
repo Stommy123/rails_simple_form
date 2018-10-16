@@ -1,4 +1,6 @@
 class Form < ApplicationRecord
+  require 'uri'
+
   belongs_to :user
 
   has_many :form_products, inverse_of: :form, :dependent => :delete_all
@@ -13,5 +15,9 @@ class Form < ApplicationRecord
 
   has_many :pt_contacts, inverse_of: :form, :dependent => :delete_all
   accepts_nested_attributes_for :pt_contacts
+
+  validates :region, presence: true
+  validates :signature, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
 end
