@@ -18,7 +18,7 @@ class FormsController < ApplicationController
   end
 
   def create
-    @form = Forms.new(form_params)
+    @form = Form.new(form_params)
     form_params[:form_products_attributes].each do |attribute|
       @form.form_products.new(product: Product.find(attribute[1][:product_id]))
     end
