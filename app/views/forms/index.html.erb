@@ -2,18 +2,21 @@
 <table class="table">
   <thead>
     <tr>
-      <th>User Id</th>
       <th>Form Id</th>
-      <th colspan="2"></th>
+      <th>Surgeon</th>
+      <th>Date</th>
+      <th>Region</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @forms.each do |form| %>
       <tr>
-        <td><%= form.user_id %></td>
-        <td><%= form&.surgeon_contacts&.first.name %></td>
-        <td><%= image_tag form&.signature, class: "logo" %></td>
+        <td><%= form.id %></id>
+        <td><%= form.surgeon_contacts.first.name %></td>
+        <td><%= form.date %></td>
+        <td><%= form.region %></td>
 
         <td><%= link_to 'Show', form %></td>
         <td><%#= link_to 'Destroy', form, method: :delete %></td>
@@ -23,4 +26,4 @@
 </table>
 
 <%= link_to 'New Form', new_form_path %>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
