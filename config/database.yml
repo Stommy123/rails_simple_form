@@ -79,7 +79,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
   database: Rom_production
-  username: Rom
-  password: <%= ENV['ROM_DATABASE_PASSWORD'] %>
+  pool: 5
+  username:
+  password:
