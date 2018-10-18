@@ -1,29 +1,35 @@
-<h1>Forms</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Form Id</th>
-      <th>Surgeon</th>
-      <th>Date</th>
-      <th>Region</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @forms.each do |form| %>
+<div>
+  <h1>Forms
+    <%= link_to 'New Form', new_form_path, class: " btn btn-success" %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger") %>
+  </h1>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped ">
+    <thead>
       <tr>
-        <td><%= form.id %></id>
-        <td><%= form.surgeon_contacts.first.name %></td>
-        <td><%= form.date&.to_formatted_s(:long) %></td>
-        <td><%= form.region %></td>
-
-        <td><%= link_to 'Show', form %></td>
-        <td><%#= link_to 'Destroy', form, method: :delete %></td>
+        <th></th>
+        <th>Form Id</th>
+        <th>Surgeon</th>
+        <th>Date</th>
+        <th>Region</th>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= link_to 'New Form', new_form_path %>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <tbody>
+      <% @forms.each do |form| %>
+        <tr>
+          <td></td>
+          <td><%= form.id %></id>
+          <td><%= form.surgeon_contacts.first.name %></td>
+          <td><%= form.date&.to_formatted_s(:long) %></td>
+          <td><%= form.region %></td>
+
+          <td><%= link_to 'Show', form, class:"btn btn-info" %></td>
+          <td><%#= link_to 'Destroy', form, method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
