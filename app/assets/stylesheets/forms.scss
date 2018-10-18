@@ -26,6 +26,8 @@
 
    #footer { font-size: 12px; text-align: center; }
 
+   #header { display: flex !important; flex-direction: row !important; justify-content: space-between; margin-top: 20px; }
+
   // .section { border: 2px solid black; }
 
   .products { max-width: 125px; max-height: 125px; }
