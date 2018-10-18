@@ -28,15 +28,17 @@
 
    #header { display: flex !important; flex-direction: row !important; justify-content: space-between; margin-top: 20px; }
 
+   #form-id { padding-left: 35px; }
+
+   #product:nth-child(5) { display: none; }
+
   // .section { border: 2px solid black; }
 
-  .products { max-width: 125px; max-height: 125px; }
+  .products { max-width: 125px; max-height: 125px; margin-left: 25px; margin-right: 25px; }
 
   .form-product { padding-top: 15px; }
 
-  #form-id { padding-left: 35px; }
-
-  #product:nth-child(5) { display: none; }
+  .amount { float: right; }
 
   .refer { padding-top: 5px; }
 
@@ -46,7 +48,9 @@
 
   .signature { height: 225px; }
 
-  .grey { color: white; background-color: #C9C9C5; height: 30px; font-size: 20px; padding-left: 10px; }
+  .dme-pt-form { margin-bottom: 60px; }
+
+  .grey { color: white; background-color: #C9C9C5; height: 30px; font-size: 20px; padding-left: 10px; margin-bottom: 0; margin-top: 20px; }
 
   .blue-line { background-color: #3E9FC0; color: teal; height: 10px; }
 
@@ -64,13 +68,17 @@
 
   .foo { display: none; }
 
-  .index-header { display: flex; }
+  .refer { margin-bottom: -10px; }
+  
+  .index-header { display: flex; margin-bottom: 50px; margin-top: 25px; }
 
-  .log-out { position: absolute; right: 100px; top: 0;}
+  .log-out { position: absolute; right: 100px; top: 25px;}
 
   .radio { margin-left: 10px; }
 
   .index-btn { margin-left: 20px; margin-top: 8px; height: 38px; }
+
+  .new-btn { background-color: #3E9FC0; border-color: #3E9FC0 }
 
   .instructions { text-align: center; color: #3E9FC0; font-size: 14px; }
 
@@ -79,8 +87,8 @@
   .signature_pad_body canvas {
     width: 100%;
     height: 100%;
-    border: dotted #444;
-    background: #CCCCCC;
+    border: .75px solid  #E6E6E6;
+    background: #F0F7FA;
   }
 
   @media screen and (max-width: 600px) {
