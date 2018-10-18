@@ -1,0 +1,96 @@
+// Place all the styles related to the forms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+  #page-1 { margin-bottom: 100px; }
+
+  #page-2 { margin-bottom: 150px; }
+
+  #page-3 { margin-bottom: 150px; }
+
+  #info-1 { margin-bottom: 30px; }
+
+  #info-2 { margin-bottom: 80px; }
+
+  #info-2 strong { color: #3E9FC0; }
+
+  #regions { text-align: center; margin-left: auto; margin-right: auto; }
+
+  #regions-image { width: 80vw; height: 50vh; margin-left: -100px; }
+
+  #submit { margin: 25px 0; text-align: center; }
+
+   #rom { height: 100px; width: 200px; }
+
+   #footer { font-size: 12px; text-align: center; }
+
+   #header { display: flex !important; flex-direction: row !important; justify-content: space-between; margin-top: 20px; }
+
+  // .section { border: 2px solid black; }
+
+  .products { max-width: 125px; max-height: 125px; }
+
+  .form-product { padding-top: 15px; }
+
+  #form-id { padding-left: 35px; }
+
+  #product:nth-child(5) { display: none; }
+
+  .refer { padding-top: 5px; }
+
+  .page-header { text-align: center; }
+
+  .page-header h5 { font-size: 25px; }
+
+  .signature { height: 225px; }
+
+  .grey { color: white; background-color: #C9C9C5; height: 30px; font-size: 20px; padding-left: 10px; }
+
+  .blue-line { background-color: #3E9FC0; color: teal; height: 10px; }
+
+  .blue-line-final { background-color: #3E9FC0; color: teal; height: 10px; margin-bottom: 0;}
+
+  .blue { background-color: #3E9FC0; color: white; height: 30px; font-size: 20px; }
+
+  .blue p { padding-left: 10px; }
+
+  .signature_pad_body { width: 625px; margin: auto; }
+
+  .field { padding-top: 5px; font-size: 14px; margin: 0 5px; }
+
+  .form-control { margin-bottom: 10px; }
+
+  .foo { display: none; }
+
+  .index-header { display: flex; }
+
+  .log-out { position: absolute; right: 100px; top: 0;}
+
+  .radio { margin-left: 10px; }
+
+  .index-btn { margin-left: 20px; margin-top: 8px; height: 38px; }
+
+  .instructions { text-align: center; color: #3E9FC0; font-size: 14px; }
+
+  .signature_pad { width: 700px; height: 400px; margin: 0 auto; }
+
+  .signature_pad_body canvas {
+    width: 100%;
+    height: 100%;
+    border: dotted #444;
+    background: #CCCCCC;
+  }
+
+  @media screen and (max-width: 600px) {
+     .container {
+         min-width: 100%;
+         margin: none !important;
+     }
+
+     .signature_pad_body canvas {
+       width: 120vw;
+       height: 35vh;
+     }
+}
