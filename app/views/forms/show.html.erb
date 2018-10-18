@@ -4,26 +4,26 @@
           <p>SURGEON INFORMATION</p>
           </div>
             <div class="field">
-            Surgeon Name: <%= @form.surgeon_contacts.first.name %>
+            Surgeon Name: <%= @form&.surgeon_contacts.first.name %>
             </div>
             <hr/>
             <div class="field">
-            Surgeon Address: <%= @form.surgeon_contacts.first.street %>
+            Surgeon Address: <%= @form&.surgeon_contacts.first.street %>
             </div>
             <hr/>
             <div class="field">
-            Surgeon Phone: <%= @form.surgeon_contacts.first.phone %>
+            Surgeon Phone: <%= @form&.surgeon_contacts.first.phone %>
             </div>
             <hr/>
             <div class="field"> 
-            Surgeon Contact Person: <%= @form.surgeon_contacts.first.primary %>
+            Surgeon Contact Person: <%= @form&.surgeon_contacts.first.primary %>
             </div>
             <hr/>
           <div class="blue">
             <p>REGION</p>
           </div>
             <div class="field">
-                <%= @form.region %>
+                <%= @form&.region %>
             </div>
         </div>
   </div>
@@ -81,7 +81,7 @@
             <% @form.form_products.each do |product|%>
                 <div class="form-product">
                 <%= product.product.description %>
-                <%= product.amount %>
+                <%= product&.amount %>
                 </div>
             <% end %>
 
@@ -101,11 +101,11 @@
           </div>
           <br/>
           <div class="field">
-            Email <%= @form.email %>
+            Email <%= @form&.email %>
             <hr/>
           </div>
           <div class="field">
-            Date Signed: <%= @form.date.to_formatted_s(:long) %>
+            Date Signed: <%= @form&.date.to_formatted_s(:long) %>
           </div>
       </div>
   </div>
@@ -122,21 +122,21 @@
         </div>
           <% @form.dme_contacts.each do |contact| %>
             <div class="field">
-                Name: <%= contact.name %>
+                Name: <%= contact&.name %>
               <hr/>
             </div>
             <div class="field">
-              Address: <%= contact.street %>
+              Address: <%= contact&.street %>
             </div>
             <div>
               <p class="grey">Daytime Contact Information</p>
             </div>
             <div class="field">
-                Contact: <%= contact.phone %>
+                Contact: <%= contact&.phone %>
               <hr/>
             </div>
             <div class="field">
-                Contact Person: <%= contact.name %>
+                Contact Person: <%= contact&.name %>
             </div>
             <hr class="blue-line"/>
           <% end %>
@@ -155,21 +155,21 @@
       <div class="section">
           <% @form.pt_contacts.each do |contact|%>
             <div class="field">
-                Name: <%= contact.name %>
+                Name: <%= contact&.name %>
               <hr/>
             </div>
             <div class="field">
-              Address: <%= contact.street %>
+              Address: <%= contact&.street %>
             </div>
             <div>
               <p class="grey">Daytime Contact Information</p>
             </div>
             <div class="field">
-                Contact: <%= contact.phone %>
+                Contact: <%= contact&.phone %>
               <hr/>
             </div>
             <div class="field">
-                Contact Person: <%= contact.name %>
+                Contact Person: <%= contact&.name %>
             </div>
             <hr class="blue-line"/>
             <% end %>
