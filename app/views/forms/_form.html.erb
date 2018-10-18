@@ -2,7 +2,7 @@
 
   <div id="page-1">
       <div class="instructions">
-        <p> This form must be filled out completely - TYPE or PRINT information below: </p>
+        <p><strong> This form must be filled out completely - TYPE or PRINT information below:</strong> </p>
       </div>
       <div class="section">
           <div class="blue">
@@ -32,8 +32,13 @@
           <div class="blue">
             <p>REGION</p>
           </div>
-            <div class="form-control-lg">
-              <%= f.collection_radio_buttons :region, ["East","West"], :to_s, :to_s, class: "form-control-lg" %>
+            <div class="field">
+              <%= f.label "East" %>
+              <%= f.radio_button :region, "East" %>
+            </div>
+            <div class="field">
+              <%= f.label "West" %>
+              <%= f.radio_button :region, "West" %>
             </div>
         </div>
         <div id="regions">
@@ -46,7 +51,7 @@
     <div class="page-header">
       <h5>Order INFORMATION</h5>
       <div class="instructions">
-        <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        <p><strong>TYPE or PRINT where the prescriptions are to be delivered</strong></p>
       </div>
     </div>
       <div class="section">
@@ -60,22 +65,27 @@
             <hr class="blue-line"/>
             <div class="form-check">
               <%= f.check_box :joint_replacement, class: "form-check-input" %>
-              <%= f.label :joint_replacement, class: "form-check-label" %>
+              <%= f.label "Total Joint Replacement Prehabilitation/Rehabilitation", class: "form-check-label" %>
             </div>
             <hr/>
             <div class="form-check">
               <%= f.check_box :sports_medicine, class: "form-check-input" %>
-              <%= f.label :sports_medicine, class: "form-check-label" %>
+              <%= f.label "Sports Medicine Prehabilitation/Rehabilitation", class: "form-check-label" %>
             </div>
             <hr/>
             <div class="form-check">
               <%= f.check_box :orthopedic_trauma, class: "form-check-input" %>
-              <%= f.label :orthopedic_trauma, class: "form-check-label" %>
+              <%= f.label "Orthopedic Trauma Prehabilitation/Rehabilitation", class: "form-check-label" %>
+            </div>
+            <hr/>
+            <div class="form-check">
+              <%= f.check_box :non_surgical_orthopedic, class: "form-check-input" %>
+              <%= f.label "Non-Surgical Orthopedic Prehabilitation/Rehabilitation", class: "form-check-label" %>
             </div>
             <hr/>
             <div class="form-check">
               <%= f.check_box :spine, class: "form-check-input" %>
-              <%= f.label :spine, class: "form-check-label" %>
+              <%= f.label "Spine Prehabilitation/Rehabilitation", class: "form-check-label" %>
             </div>
             <hr/>
             <div class="field">
@@ -88,15 +98,20 @@
             <p>NUMBER OF PATIENTS/UNITS PRESCRIBED (Monthly)</p>
           </div>
             <div class="form-product">
-              <%= f.fields_for :form_products do |product_form| %>
-                <div class="field">
-                  <%= f.check_box :foo %>
-                  <%= image_tag @products[product_form.index].image, class: "products" %>
-                  <%= product_form.label "# of Units/Month:" %>
-                  <%= product_form.text_field :amount %>
-                  <%= product_form.hidden_field :product_id %>
-                </div><hr/>
-              <% end %>
+              <div id="product">
+                <%= f.fields_for :form_products do |product_form| %>
+                  <div class="field">
+                    <%= f.check_box :foo %>
+                    <%= image_tag @products[product_form.index].image, class: "products" %>
+                    <%= product_form.label "# of Units/Month:" %>
+                    <%= product_form.text_field :amount %>
+                    <%= product_form.hidden_field :product_id %>
+                    <% if product_form.index < 2 %>
+                    <hr/>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             </div>
             <hr class="blue-line"/>
             <div class="form-check">
@@ -128,7 +143,7 @@
       <div class="page-header">
         <h5>HOSPITAL/DME INFORMATION</h5>
         <div class="instructions">
-          <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        <p><strong>TYPE or PRINT where the prescriptions are to be delivered</strong></p>
         </div>
       </div>
       <div class="section">
@@ -164,7 +179,7 @@
       <div class="page-header">
         <h5>PHYSICAL THERAPY INFORMATION</h5>
         <div class="instructions">
-          <p>TYPE or PRINT where the prescriptions are to be delivered</p>
+        <p><strong>TYPE or PRINT where the prescriptions are to be delivered</strong></p>
         </div>
       </div>
       <div class="section">

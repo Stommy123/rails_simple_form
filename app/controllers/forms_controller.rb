@@ -60,6 +60,7 @@ class FormsController < ApplicationController
       :joint_replacement,
       :sports_medicine,
       :orthopedic_trauma,
+      :non_surgical_orthopedic,
       :spine,
       :other_conditions,
       :substitutions,
