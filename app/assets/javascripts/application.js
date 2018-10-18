@@ -18,7 +18,10 @@
 //= require signature_pad
 //= require_tree .
 
-  
+// element = element.children[5]
+// element.classList.add("foo")
+
+console.log("hello world")
 function resizeCanvas(canvas) {
     var ratio =  Math.max(window.devicePixelRatio || 1, 1);
     canvas.width = canvas.offsetWidth * ratio;
@@ -35,7 +38,7 @@ $(document).on('turbolinks:load', function() {
     resizeCanvas(canvas);
     signature_pad = new SignaturePad(canvas);
     $('.signature_pad_clear').click(function() { signature_pad.clear() });
-    $('.signature_pad_save').click(function(event) { 
+    $('.signature_pad_save').click(function(event) {
       if (signature_pad.isEmpty()){
         alert('You must sign to accept the Terms and Conditions');
         event.preventDefault();
