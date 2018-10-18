@@ -29,7 +29,7 @@
               <%= surgeon_form.text_field :primary, class: 'form-control' %>
             </div>
           <% end %>
-          <div class="blue">
+          <div class="blue region">
             <p>REGION</p>
           </div>
             <div class="field">
@@ -49,7 +49,7 @@
 
   <div id="page-2">
     <div class="page-header">
-      <h5>Order INFORMATION</h5>
+      <h5>ORDER INFORMATION</h5>
       <div class="instructions">
         <p><strong>TYPE or PRINT where the prescriptions are to be delivered</strong></p>
       </div>
@@ -60,7 +60,7 @@
               <p>HOSPITAL/DME AND PHYSICAL THERAPY INFORMATION</p>
             </div>
             <div class="refer">
-              <p><strong>Please list all of the Hospitals, DME's, and PT's that you refer patients to in the section below</strong></p>
+              <p class="list"><strong>Please list all of the Hospitals, DME's, and PT's that you refer patients to in the section below</strong></p>
             </div>
             <hr class="blue-line"/>
             <div class="form-check">
@@ -88,9 +88,18 @@
               <%= f.label "Spine Prehabilitation/Rehabilitation", class: "form-check-label" %>
             </div>
             <hr/>
-            <div class="field">
-              <%= f.label "Other Conditions:" %>
-              <%= f.text_field :other_conditions, class: 'form-control' %>
+            <div class="form-check">
+              <div class="flex-other">
+                <div>
+                  <%= f.check_box :bar %>
+                </div>
+                <div>
+                  <%= f.label "Other:", class: "other-label" %>
+                </div>
+                <div>
+                  <%= f.text_field :other_conditions, class: 'form-control other' %>
+                </div>
+              </div>
             </div>
         </div>
         <div id="page-2-2">

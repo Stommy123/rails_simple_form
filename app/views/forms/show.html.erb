@@ -78,8 +78,10 @@
           </div>
             <% @form.form_products[0...-3].each do |product|%>
                 <div class="form-product">
-                <%= product.product.description %>:
-                <%= product&.amount %>
+                  <% unless product.amount == "" %>
+                    <%= product.product.description %>:
+                    <strong><%= product&.amount %></strong>
+                  <% end %>
                 </div>
             <% end %>
             <hr class="blue-line"/>
