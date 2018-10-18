@@ -1,34 +1,35 @@
-    <div class="container logo margin-bottom">
-      <%= image_tag "rom3.png" %>
+
+<div id="sign-in">
+  <div id="log-in-left">
+    <%= image_tag "https://i.imgur.com/qAJyhxy.png", class: "logo" %>
+  </div>
+  <div id="log-in-right">
+    <div class="welcome">
+      <h1>Welcome</h1>
+      <p class="first" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+      <p>aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-  
-
-<div id="login" class="container">
-  <div class="d-flex justify-content-center">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control margin-bottom", placeholder: "E-mail Address" %>
+        <div class="e-mail field">
+          <%= f.label "Email Address" %>
+          <%= f.email_field :email, class: "form-control log-in margin-bottom" %>
         </div>
-
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+        <div class="password field">
+          <%= f.label "Password" %>
+          <%= f.password_field :password, class: "form-control log-in" %>
         </div>
-
         <% if devise_mapping.rememberable? -%>
           <div class="field">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>
         <% end -%>
-
         <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-primary" %>
+          <%= f.submit "Log in", class: "btn btn-primary log-in-button", id: "submission"  %>
         </div>
-      <% end %>     
-    </div>
+      <% end %>
+  </div>
 </div>
-
-
-
-
-<%#= render "devise/shared/links" %>
+<div id="foot">
+  <p> ROM3 Rehab, LLC. | 1 (888) 374-0855 | Privacy Policy | Disclaimer | Contact Us </p>
+</div>
