@@ -1,3 +1,4 @@
+<div class="container">
   <div id="page-1">
       <div class="section">
           <div class="blue">
@@ -15,8 +16,13 @@
             Surgeon Phone: <%= @form&.surgeon_contacts.first.phone %>
             </div>
             <hr/>
+<<<<<<< HEAD
             <div class="field"> 
             Surgeon Contact Person: <%= @form&.surgeon_contacts.first.primary %>
+=======
+            <div class="field">
+            Surgeon Contact Person: <%= @form.surgeon_contacts.first.primary %>
+>>>>>>> 074342a6a79647eb27706077ed32f727aa685902
             </div>
             <hr/>
           <div class="blue">
@@ -77,7 +83,7 @@
           <div class="blue">
             <p>NUMBER OF PATIENTS/UNITS PRESCRIBED (Monthly)</p>
           </div>
-           
+
             <% @form.form_products.each do |product|%>
                 <div class="form-product">
                 <%= product.product.description %>
@@ -175,3 +181,4 @@
             <% end %>
     </div>
   </div>
+</div>
