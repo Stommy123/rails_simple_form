@@ -1,13 +1,12 @@
-<div class="container">
 
-  <div id="header">
+  <div class= "container">
     <div id="logo">
       <%= image_tag "rom3.png", id: "rom" %>
     </div>
     <div>
       <h3> Intent to Prescribe </h3>
     </div>
-  </div>
+
   <div id="info-1">
     <p><strong>Important Information</strong></p>
     <ul>
@@ -26,6 +25,9 @@
       <li>Printing it out and completing it by hand, then faxing it in to: 1-888-888-8888</li>
     </ul>
   </div>
-  <%= render 'form', form: @form %>
-
+  </div>
+<div class="container">
+  <div class="row">
+    <%= render 'form', form: @form %>
+  </div>
 </div>
