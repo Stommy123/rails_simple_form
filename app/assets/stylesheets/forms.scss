@@ -70,4 +70,9 @@
          min-width: 100%;
          margin: none !important;
      }
+
+     .signature_pad_body canvas {
+       width: 120vw;
+       height: 35vh;
+     }
 }
