@@ -8,7 +8,9 @@
 
 
 Product.destroy_all
+User.destroy_all
 
-Product.create(description: "Alpha", image: "https://i.imgur.com/jIWfhU0.png")
-Product.create(description: "Beta", image: "https://i.imgur.com/gLjN8jg.png")
-Product.create(description: "Gamma", image: "https://i.imgur.com/gLjN8jg.png")
+User.create(email: "rom@rom.com", password: "password", password_confirmation: "password")
+Product.create(description: "Product-1", image: "https://i.imgur.com/jIWfhU0.png")
+Product.create(description: "Product-2", image: "https://i.imgur.com/gLjN8jg.png")
+Product.create(description: "Product-3", image: "https://i.imgur.com/gLjN8jg.png")

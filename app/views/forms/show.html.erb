@@ -1,4 +1,4 @@
-<div class="container">
+
   <div id="page-1">
       <div class="section">
           <div class="blue">
@@ -33,17 +33,9 @@
   <div id="page-2">
     <div class="page-header">
       <h5>SHIPPING INFORMATION</h5>
-      <p>TYPE or PRINT where the prescriptions are to be delivered</p>
     </div>
       <div class="section">
         <div id="page-2-1">
-            <div class="blue">
-              <p>HOSPITAL/DME INFORMATION --- TO BE ADDED</p>
-            </div>
-            <div class="blue">
-              <p>PHYSICAL THERAPY INFORMATION --- TO BE ADDED</p>
-            </div>
-
             <% if @form.joint_replacement %>
                 <div class="field">
                     Joint Replacement
@@ -78,14 +70,12 @@
           <div class="blue">
             <p>NUMBER OF PATIENTS/UNITS PRESCRIBED (Monthly)</p>
           </div>
-
-            <% @form.form_products.each do |product|%>
+            <% @form.form_products[0...-3].each do |product|%>
                 <div class="form-product">
                 <%= product.product.description %>
                 <%= product.amount %>
                 </div>
             <% end %>
-
             <hr class="blue-line"/>
             <div class="field">
               <% if @form.substitutions %>
@@ -176,4 +166,3 @@
             <% end %>
     </div>
   </div>
-</div>
