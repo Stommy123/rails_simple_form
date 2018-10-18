@@ -63,18 +63,22 @@
               <%= f.check_box :joint_replacement, class: "form-check-input" %>
               <%= f.label :joint_replacement, class: "form-check-label" %>
             </div>
+            <hr/>
             <div class="form-check">
               <%= f.check_box :sports_medicine, class: "form-check-input" %>
               <%= f.label :sports_medicine, class: "form-check-label" %>
             </div>
+            <hr/>
             <div class="form-check">
               <%= f.check_box :orthopedic_trauma, class: "form-check-input" %>
               <%= f.label :orthopedic_trauma, class: "form-check-label" %>
             </div>
+            <hr/>
             <div class="form-check">
               <%= f.check_box :spine, class: "form-check-input" %>
               <%= f.label :spine, class: "form-check-label" %>
             </div>
+            <hr/>
             <div class="field">
               <%= f.label "Other Conditions:" %>
               <%= f.text_field :other_conditions, class: 'form-control' %>
@@ -123,16 +127,16 @@
 
   <div id="page-3">
       <div class="page-header">
-        <h5>SHIPPING INFORMATION</h5>
+        <h5>HOSPITAL/DME INFORMATION</h5>
         <div class="instructions">
           <p>TYPE or PRINT where the prescriptions are to be delivered</p>
         </div>
       </div>
       <div class="section">
-        <div class="blue">
-          <p>HOSPITAL/DME INFORMATION</p>
-        </div>
           <%= f.fields_for :dme_contacts do |dme_form| %>
+          <div class="blue">
+            <p>HOSPITAL/DME - <%=dme_form.index + 1%></p>
+          </div>
             <div class="field">
               <%= dme_form.label "Name:" %>
               <%= dme_form.text_field :name, class: 'form-control' %>
@@ -152,7 +156,6 @@
               <%= dme_form.label "Contact Person:" %>
               <%= dme_form.text_field :primary, class: 'form-control' %>
             </div>
-            <hr class="blue-line-final"/>
           <% end %>
       </div>
   </div>
@@ -160,16 +163,16 @@
 
   <div id="page-4">
       <div class="page-header">
-        <h5>SHIPPING INFORMATION</h5>
+        <h5>PHYSICAL THERAPY INFORMATION</h5>
         <div class="instructions">
           <p>TYPE or PRINT where the prescriptions are to be delivered</p>
         </div>
       </div>
       <div class="section">
-        <div class="blue">
-          <p>PHYSICAL THERAPY INFORMATION</p>
-        </div>
           <%= f.fields_for :pt_contacts do |pt_form| %>
+          <div class="blue">
+            <p>PHYSICAL THERAPY - <%=pt_form.index + 1%></p>
+          </div>
             <div class="field">
               <%= pt_form.label "Name:" %>
               <%= pt_form.text_field :name, class: 'form-control' %>
@@ -187,7 +190,6 @@
               <%= pt_form.label "Contact Person:" %>
               <%= pt_form.text_field :primary, class: 'form-control' %>
             </div>
-            <hr class="blue-line-final" />
             <% end %>
     </div>
   </div>
