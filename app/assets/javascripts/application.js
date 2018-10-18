@@ -18,16 +18,6 @@
 //= require signature_pad
 //= require_tree .
 
-// element = element.children[5]
-// element.classList.add("foo")
-
-console.log("hello world")
-function resizeCanvas(canvas) {
-    var ratio =  Math.max(window.devicePixelRatio || 1, 1);
-    canvas.width = canvas.offsetWidth * ratio;
-    canvas.height = canvas.offsetHeight * ratio;
-    canvas.getContext("2d").scale(ratio, ratio);
-}
 
 $(document).on('turbolinks:load', function() {
   var canvas = document.querySelector("canvas");
