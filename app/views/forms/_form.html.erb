@@ -53,81 +53,28 @@
       <div class="section">
         <div id="page-2-1">
             <div class="blue">
-              <p>HOSPITAL/DME INFORMATION</p>
+              <p>HOSPITAL/DME AND PHYSICAL THERAPY INFORMATION</p>
             </div>
-            <div class="dme">
-              <%= f.fields_for @dme do |dme_form| %>
-                <div class="field">
-                  <%= dme_form.label "Name:" %>
-                  <%= dme_form.text_field :name, class: 'form-control' %>
-                </div>
-                <div class="field">
-                  <%= dme_form.label "Address:" %>
-                  <%= dme_form.text_field :street, class: 'form-control' %>
-                </div>
-                <div>
-                  <p class="grey">Daytime Contact Information</p>
-                </div>
-                <div class="field">
-                  <%= dme_form.label "Phone:" %>
-                  <%= dme_form.text_field :phone, class: 'form-control' %>
-
-                </div>
-                <div class="field">
-                  <%= dme_form.label "Contact Person:" %>
-                  <%= dme_form.text_field :primary, class: 'form-control' %>
-                </div>
-              <% end %>
+            <div class="refer">
+              <p>Please list all of the Hospitals, DME's, and PT's that you refer patients to in the section below</p>
             </div>
-            <div class="blue">
-              <p>PHYSICAL THERAPY INFORMATION</p>
-            </div>
-            <div class="pt">
-                <%= f.fields_for @pt do |pt_form| %>
-                <div class="field">
-                  <%= pt_form.label "Name:" %>
-                  <%= pt_form.text_field :name, class: 'form-control' %>
-
-                </div>
-                <div class="field">
-                  <%= pt_form.label "Address:" %>
-                  <%= pt_form.text_field :street, class: 'form-control' %>
-                </div>
-                <div>
-                  <p class="grey">Daytime Contact Information</p>
-                </div>
-                <div class="field">
-                  <%= pt_form.label "Phone:" %>
-                  <%= pt_form.text_field :phone, class: 'form-control' %>
-
-                </div>
-                <div class="field">
-                  <%= pt_form.label "Contact Person:" %>
-                  <%= pt_form.text_field :primary, class: 'form-control' %>
-                </div>
-                <hr class="blue-line"/>
-                <% end %>
-            </div>
+            <hr class="blue-line"/>
             <div class="form-check">
               <%= f.check_box :joint_replacement, class: "form-check-input" %>
               <%= f.label :joint_replacement, class: "form-check-label" %>
             </div>
-
             <div class="form-check">
               <%= f.check_box :sports_medicine, class: "form-check-input" %>
               <%= f.label :sports_medicine, class: "form-check-label" %>
             </div>
-
             <div class="form-check">
               <%= f.check_box :orthopedic_trauma, class: "form-check-input" %>
               <%= f.label :orthopedic_trauma, class: "form-check-label" %>
             </div>
-
             <div class="form-check">
               <%= f.check_box :spine, class: "form-check-input" %>
               <%= f.label :spine, class: "form-check-label" %>
             </div>
-
             <div class="field">
               <%= f.label "Other Conditions:" %>
               <%= f.text_field :other_conditions, class: 'form-control' %>
@@ -140,6 +87,7 @@
             <div class="form-product">
               <%= f.fields_for :form_products do |product_form| %>
                 <div class="field">
+                  <%= f.check_box :foo %>
                   <%= image_tag @products[product_form.index].image, class: "products" %>
                   <%= product_form.label "# of Units/Month:" %>
                   <%= product_form.text_field :amount %>
@@ -161,7 +109,6 @@
                 <canvas></canvas>
               </div>
             </div>
-
           </div>
           <br/>
           <div class="field">
@@ -189,7 +136,6 @@
             <div class="field">
               <%= dme_form.label "Name:" %>
               <%= dme_form.text_field :name, class: 'form-control' %>
-
             </div>
             <div class="field">
               <%= dme_form.label "Address:" %>
@@ -201,7 +147,6 @@
             <div class="field">
               <%= dme_form.label "Phone:" %>
               <%= dme_form.text_field :phone, class: 'form-control' %>
-
             </div>
             <div class="field">
               <%= dme_form.label "Contact Person:" %>
@@ -229,7 +174,6 @@
               <%= pt_form.label "Name:" %>
               <%= pt_form.text_field :name, class: 'form-control' %>
             </div>
-
             <div class="field">
               <%= pt_form.label "Address:" %>
               <%= pt_form.text_field :street, class: 'form-control' %>
@@ -239,7 +183,6 @@
               <%= pt_form.label "Phone:" %>
               <%= pt_form.text_field :phone, class: 'form-control' %>
             </div>
-
             <div class="field">
               <%= pt_form.label "Contact Person:" %>
               <%= pt_form.text_field :primary, class: 'form-control' %>
@@ -251,7 +194,7 @@
 
 
   <div class="actions signature_pad_save" id="submit">
-    <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block", id: "submission" %>
   </div>
 
 
