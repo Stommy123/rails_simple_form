@@ -15,7 +15,7 @@
       <tr>
         <td><%= form.id %></id>
         <td><%= form.surgeon_contacts.first.name %></td>
-        <td><%= form.date %></td>
+        <td><%= form.date&.to_formatted_s(:long) %></td>
         <td><%= form.region %></td>
 
         <td><%= link_to 'Show', form %></td>
