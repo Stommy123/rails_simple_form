@@ -33,12 +33,12 @@
             <p>REGION</p>
           </div>
             <div class="field">
-              <%= f.label "East" %>
               <%= f.radio_button :region, "East" %>
+              <%= f.label "East", class:"radio" %>
             </div>
             <div class="field">
-              <%= f.label "West" %>
               <%= f.radio_button :region, "West" %>
+              <%= f.label "West", class:"radio" %>
             </div>
         </div>
         <div id="regions">
@@ -103,7 +103,7 @@
                   <div class="field">
                     <%= f.check_box :foo %>
                     <%= image_tag @products[product_form.index].image, class: "products" %>
-                    <%= product_form.label "# of Units/Month:" %>
+                    <%= product_form.label "#{@products[product_form.index].description} --- # of Units/Month:" %>
                     <%= product_form.text_field :amount %>
                     <%= product_form.hidden_field :product_id %>
                     <% if product_form.index < 2 %>

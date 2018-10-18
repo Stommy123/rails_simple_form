@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Form.destroy_all
 Product.destroy_all
 User.destroy_all
 
 User.create(email: "rom@rom.com", password: "password", password_confirmation: "password")
-Product.create(description: "Product-1", image: "https://i.imgur.com/jIWfhU0.png")
-Product.create(description: "Product-2", image: "https://i.imgur.com/gLjN8jg.png")
-Product.create(description: "Product-3", image: "https://i.imgur.com/gLjN8jg.png")
+Product.create(description: "ROM3 Portable Professional Cycle", image: "https://i.imgur.com/jIWfhU0.png")
+Product.create(description: "ROM3 Recumbent Pro-Cycle", image: "https://i.imgur.com/gLjN8jg.png")
+Product.create(description: "ROM3 Upright Pro-Cycle", image: "https://i.imgur.com/gLjN8jg.png")

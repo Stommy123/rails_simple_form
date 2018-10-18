@@ -1,4 +1,4 @@
-
+<div class="container">
   <div id="page-1">
       <div class="section">
           <div class="blue">
@@ -72,16 +72,16 @@
           </div>
             <% @form.form_products[0...-3].each do |product|%>
                 <div class="form-product">
-                <%= product.product.description %>
+                <%= product.product.description %>:
                 <%= product&.amount %>
                 </div>
             <% end %>
             <hr class="blue-line"/>
             <div class="field">
               <% if @form.substitutions %>
-                 Substitions Selected
+                 No Substitions
               <% else %>
-                Substitions Not Selected
+                Substitions Acceptable
               <% end %>
             </div>
             <hr class="blue-line" />
@@ -166,3 +166,4 @@
             <% end %>
     </div>
   </div>
+</div>
