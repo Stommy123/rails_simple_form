@@ -7,7 +7,7 @@ class FormMailer < ApplicationMailer
     attachments['form.pdf'] = WickedPdf.new.pdf_from_string(
       render_to_string(template: 'forms/show.pdf.erb', locals:{:@form => @form})
     )
-    mail(to: @reciepient, subject: 'Copy of your Rom3 Rehab Form')
+    mail(to: @reciepient, subject: 'Copy of your Simple Form')
   end
 end
 
